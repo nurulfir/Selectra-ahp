@@ -172,7 +172,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-              Mengapa Menggunakan Smart AHP?
+              Mengapa Menggunakan Selectra ?
             </h2>
             <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Sistem kami membantu Anda membuat keputusan yang lebih baik dengan
@@ -332,7 +332,7 @@ const Home = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Smartphone className="w-8 h-8 text-blue-500" />
                 <span className="text-xl font-bold text-gray-900 dark:text-white">
-                  Smart AHP
+                  Selectra
                 </span>
               </div>
               <p>
@@ -374,7 +374,7 @@ const Home = () => {
             </div>
           </div>
           <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center text-gray-500 dark:text-gray-500">
-            <p>&copy; 2025 Smart AHP. Sistem Pemilihan Smartphone Terbaik.</p>
+            <p>&copy; 2025 Selectra. Sistem Pemilihan Smartphone Terbaik.</p>
           </div>
         </div>
       </footer>
