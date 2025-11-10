@@ -213,17 +213,16 @@ const Home = () => {
 									<SpotlightCard
 										spotlightColor={
 											isDarkMode
-												? "rgba(96, 165, 250, 0.25)" // biru lembut untuk dark mode
-												: "rgba(37, 99, 235, 0.25)" // biru terang untuk light mode
+												? "rgba(96, 165, 250, 0.25)"
+												: "rgba(37, 99, 235, 0.25)" 
 										}
 										className={`
-            p-8 rounded-2xl transition-all duration-300 hover:scale-[1.03]
-            ${
-							isDarkMode
-								? "bg-gray-900/60 border border-gray-700 hover:bg-gray-900/80"
-								: "bg-white border border-gray-200 hover:bg-gray-100"
-						}
-          `}
+											p-8 rounded-2xl transition-all duration-300 hover:scale-[1.03]
+											${isDarkMode
+												? "bg-gray-900/60 border border-gray-700 hover:bg-gray-900/80"
+												: "bg-white border border-gray-200 hover:bg-gray-100"
+											}
+										`}
 									>
 										<div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
 											<Icon className="w-7 h-7 text-white" />
