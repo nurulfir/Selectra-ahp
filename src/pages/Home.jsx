@@ -10,7 +10,8 @@ import {
 	Smartphone,
 	Zap,
 } from "lucide-react";
-import LightRays from "../components/LightRays";
+import LightRays from "@/components/LightRays";
+import SpotlightCard from "@/components/SpotlightCard";
 
 const Home = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -91,8 +92,8 @@ const Home = () => {
 	];
 
 	const fadeInUp = {
-		hidden: { opacity: 0, y: 40 },
-		show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+		hidden: { opacity: 0, y: 20 },
+		show: { opacity: 1, y: 0 },
 	};
 
 	return (
@@ -208,17 +209,32 @@ const Home = () => {
 									whileInView="show"
 									transition={{ delay: index * 0.2 }}
 									viewport={{ once: true }}
-									className="bg-white dark:bg-gray-900 rounded-2xl p-8 hover:shadow-2xl hover:scale-105 transition-all border border-gray-200 dark:border-gray-700"
 								>
-									<div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
-										<Icon className="w-7 h-7 text-white" />
-									</div>
-									<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-										{feature.title}
-									</h3>
-									<p className="text-gray-600 dark:text-gray-400">
-										{feature.description}
-									</p>
+									<SpotlightCard
+										spotlightColor={
+											isDarkMode
+												? "rgba(96, 165, 250, 0.25)" // biru lembut untuk dark mode
+												: "rgba(37, 99, 235, 0.25)" // biru terang untuk light mode
+										}
+										className={`
+            p-8 rounded-2xl transition-all duration-300 hover:scale-[1.03]
+            ${
+							isDarkMode
+								? "bg-gray-900/60 border border-gray-700 hover:bg-gray-900/80"
+								: "bg-white border border-gray-200 hover:bg-gray-100"
+						}
+          `}
+									>
+										<div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
+											<Icon className="w-7 h-7 text-white" />
+										</div>
+										<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+											{feature.title}
+										</h3>
+										<p className="text-gray-600 dark:text-gray-400">
+											{feature.description}
+										</p>
+									</SpotlightCard>
 								</motion.div>
 							);
 						})}

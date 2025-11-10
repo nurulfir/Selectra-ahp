@@ -1,10 +1,28 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import AHPAnalysis from "./pages/Compare";
-import ClickSpark from "./components/ClickSpark";
+import Navbar from "@/components/Navbar";
+import Home from "@/pages/Home";
+import AHPAnalysis from "@/pages/Compare";
+import ClickSpark from "@/components/ClickSpark";
 
+function AppContent() {
+	const location = useLocation();
+
+	// Sembunyikan Navbar di halaman tertentu
+	const hideNavbarOn = ["/analisis"];
+
+	return (
+		<div className="min-h-screen bg-gray-50">
+			{/* Navbar hanya muncul jika path tidak termasuk dalam hideNavbarOn */}
+			{!hideNavbarOn.includes(location.pathname) && <Navbar />}
+
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/analisis" element={<AHPAnalysis />} />
+			</Routes>
+		</div>
+	);
+}
 function App() {
 	return (
 		<BrowserRouter>
